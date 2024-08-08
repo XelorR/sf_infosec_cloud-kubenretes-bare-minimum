@@ -42,9 +42,9 @@ minikube cache add <название локального образа>
 minikube delete -p petr-polyakov-kuber-sf
 
 # create
-minikube config set driver virtualbox
+minikube config set driver docker
 minikube kubectl -- get po -A
-minikube start --nodes 3 -p petr-polyakov-kuber-sf --driver=virtualbox
+minikube start --nodes 3 -p petr-polyakov-kuber-sf --driver=docker
 
 # deploynment
 minikube config set profile petr-polyakov-kuber-sf
