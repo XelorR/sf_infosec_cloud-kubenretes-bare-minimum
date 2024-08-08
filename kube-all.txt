@@ -1,0 +1,16 @@
+NAME                                     READY   STATUS    RESTARTS   AGE   IP           NODE                         NOMINATED NODE   READINESS GATES
+pod/mongo-deployment-5f76f44c75-f57mb    1/1     Running   0          21m   10.244.1.2   petr-polyakov-kuber-sf-m02   <none>           <none>
+pod/webapp-deployment-7cfd886bc9-879sl   1/1     Running   0          21m   10.244.1.3   petr-polyakov-kuber-sf-m02   <none>           <none>
+
+NAME                     TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE   SELECTOR
+service/kubernetes       ClusterIP   10.96.0.1       <none>        443/TCP          21m   <none>
+service/mongo-service    ClusterIP   10.96.248.4     <none>        27017/TCP        21m   app=mongo
+service/webapp-service   NodePort    10.102.78.113   <none>        3000:30100/TCP   21m   app=webapp
+
+NAME                                READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES                     SELECTOR
+deployment.apps/mongo-deployment    1/1     1            1           21m   mongodb      mongo:7.0.13-rc0-jammy     app=mongo
+deployment.apps/webapp-deployment   1/1     1            1           21m   webapp       xelorr/k8s-demo-app:v1.0   app=webapp
+
+NAME                                           DESIRED   CURRENT   READY   AGE   CONTAINERS   IMAGES                     SELECTOR
+replicaset.apps/mongo-deployment-5f76f44c75    1         1         1       21m   mongodb      mongo:7.0.13-rc0-jammy     app=mongo,pod-template-hash=5f76f44c75
+replicaset.apps/webapp-deployment-7cfd886bc9   1         1         1       21m   webapp       xelorr/k8s-demo-app:v1.0   app=webapp,pod-template-hash=7cfd886bc9
