@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: mongodb
-        image: corpusops/mongo:6.0
+        image: mongo:7.0.13-rc0-jammy
         ports:
         - containerPort: 27017
         env:
