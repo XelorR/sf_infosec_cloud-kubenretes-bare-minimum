@@ -23,12 +23,13 @@ minikube cache add <название локального образа>
 В качестве ответа предоставьте:
 
 - [x] все конфигурационные файлы,
+  - [configmap](./1_configmap.yaml)
+  - [secret](./2_mongo-secret.yaml)
+  - [db](./3_database.yaml)
+  - [web](./4_webapp.yaml)
 - [x] скриншот из браузера с работающим веб-приложением,
-
-[dashboard](./dashboard.png)
-
-![](./user-profile.png)
-
+  - [dashboard](./dashboard.png)
+  - ![](./user-profile.png)
 - [x] [вывод](./kube-all.txt) команды `kubectl get all -o wide`
 - [x] табличку с инвентаризацией
 
